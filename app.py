@@ -5,7 +5,10 @@ from auth import token_required
 
 app = Flask(__name__)
 
+#URL de la base de datos de los Pokemon
 POKEAPI_BASE_URL = "https://pokeapi.co/api/v2/"
+
+#Metodo GET para obtener el tipo de un determinado Pokemon
 
 @app.route('/pokemon/type/<name>', methods=['GET'])
 @token_required
@@ -17,6 +20,8 @@ def get_pokemon_type(name):
     types = [t['type']['name'] for t in data['types']]
     return jsonify({"name": name, "types": types})
 
+#Metodo GET para obtener un Pokemon random de un tipo determinado
+
 @app.route('/pokemon/random/<type_name>', methods=['GET'])
 @token_required
 def get_random_pokemon_by_type(type_name):
@@ -27,6 +32,8 @@ def get_random_pokemon_by_type(type_name):
     pokemon_list = [p['pokemon']['name'] for p in data['pokemon']]
     random_pokemon = random.choice(pokemon_list)
     return jsonify({"random_pokemon": random_pokemon})
+
+#Metodo GET para obtener el nombre mas largo de un Pokemon de un tipo determinado
 
 @app.route('/pokemon/longest_name/<type_name>', methods=['GET'])
 @token_required
