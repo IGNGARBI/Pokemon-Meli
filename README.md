@@ -10,7 +10,7 @@ Este proyecto es una API de Pokémon desarrollada en Flask que proporciona infor
 1. **Clonar el repositorio:**
 
     ```sh
-    git clone https://github.com/tu-usuario/tu-repo.git
+    git clone https://github.com/IGNGARBI/Pokemon-Meli
     cd tu-repo
     ```
 
