@@ -16,14 +16,6 @@ stored_hashed_token = hashlib.sha256(original_token.encode()).hexdigest()
 stored_hashed_username = hashlib.sha256(original_username.encode()).hexdigest()
 stored_hashed_password = hashlib.sha256(original_password.encode()).hexdigest()
 
-#Hay que eliminar esto porque es como una falla de seguridad
-print("Original Token:", original_token)
-print("Original Username:", original_username)
-print("Original Password:", original_password)
-print("Stored Hashed Token:", stored_hashed_token)
-print("Stored Hashed Username:", stored_hashed_username)
-print("Stored Hashed Password:", stored_hashed_password)
-
 
 #Se hace una request para traer  los valores de username, password y token con los valores traidos del .env
 def token_required(f):

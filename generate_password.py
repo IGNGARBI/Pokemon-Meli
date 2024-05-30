@@ -4,5 +4,5 @@ import secrets
 
 password = secrets.token_hex(32)
 
-#Eliminar este Print
+#Eliminar este Print después de pegar el valor correspondiente en el archivo .env
 print(f"Generated API password: {password}")
